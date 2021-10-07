@@ -16,7 +16,7 @@ int n;
 	cout << "结果为 " << F(n) << endl;
 return 0;
 }
-
+时间复杂度为O(n).
 递推
 #include <iostream>
 using namespace std;
@@ -32,3 +32,4 @@ int main()
 	}
 	cout<< "结果为 " << sum<< endl;
 }
+时时间复杂度为O(n).
