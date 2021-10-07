@@ -1,1 +1,47 @@
+#include <iostream>
+using namespace std;
+int F(int n)
+{
+	if(n==1)
+		return 1;
+	else if(n==2)
+		return 2;
+	return F(n-1)+F(n-2);
+}
+int main()
+{
+    int n;
+    cout << "请输入你要走的台阶数 n :" ;
+    cin >> n;
+	cout << "走台阶有 " << F(n) << " 种方法" << endl;
+	return 0;
+}
+#include<iostream>
+using namespace std;
+int main()
+{
+   int 	stairCount ; 
+   cout<<"有多少台阶"<<endl;
+   cin>>stairCount; 
+    if (stairCount == 1) {
+       cout<<"有1种解法" <<endl; 
+    }
 
+    if (stairCount == 2) {
+        cout<<"有2种解法" <<endl; 
+    }
+
+    int stepMethods = 0;
+    int preStepMethods = 2;
+    int prePreStepMethods = 1;
+    int stairStepped = 3;
+
+    for (; stairStepped < stairCount + 1; ++stairStepped ) {
+        stepMethods = prePreStepMethods + preStepMethods;
+        prePreStepMethods = preStepMethods;
+        preStepMethods = stepMethods;
+    }
+    cout<<"有"<<stepMethods<<"种解法" <<endl; 
+
+    return 0; 
+}
