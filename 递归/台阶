@@ -16,6 +16,9 @@ int main()
 	cout << "走台阶有 " << F(n) << " 种方法" << endl;
 	return 0;
 }
+n<=2时时间复杂度为O(1)，n>2时，时间复杂度为O(2^n)。
+
+
 #include<iostream>
 using namespace std;
 int main()
