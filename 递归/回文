@@ -31,7 +31,7 @@ bool f(const char *str,int n)
 	 }
 	 return 0;
  }
- 
+n<=1时时间复杂度为O(1)，n>1时时间复杂度为O(n). 
  
 #include<iostream>
 using namespace std;
@@ -51,3 +51,4 @@ int main()
     cout<<str<<"is Palindrome"<<endl;
         return 0;
  }
+ n<=1时时间复杂度为O(1)，n>1时时间复杂度为O(n/2).
