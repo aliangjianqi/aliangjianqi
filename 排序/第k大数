@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+int Partition(int v[],int left,int right){
+	int tmp=v[left];	
+	while(left<right){
+		while(left<right&&v[right]<=tmp) right--;
+		v[left]=v[right];
+		while(left<right&&v[left]>=tmp) left++;
+		v[right]=v[left];
+	}	
+	v[left]=tmp;
+	return left;
+}
+ 
+int findk(int k,int v[],int left,int right){
+	int mid=Partition(v,left,right);
+	if(mid==k-1) return v[mid];
+	else if(mid<k-1) return findk(k,v,mid+1,right);
+	else return findk(k,v,left,mid-1);	
+} 
+int main(){
+	int k;
+		int v[]={25,5,9,56,78,170,46,87,12,5}; 
+		int len=sizeof(v)/sizeof(int);
+		cout<<"请输入你要查找第k大的数："<<endl;  
+		cin>>k;
+		int kth=findk(k,v,0,len-1); 
+		cout<<"第"<<k<<"大数："<<kth<<endl;	
+		cout<<endl;
+		for(int i=0;i<len;i++)
+        {
+        	cout<<" "<<v[i];
+		}
+	return 0;
+}
